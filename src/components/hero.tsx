@@ -70,9 +70,9 @@ export default function Hero({
             </div>
           </div>
           <div className="order-1 md:order-2">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-gray-200 bg-muted dark:border-gray-800">
+            <div className="relative aspect-[6/4] w-full overflow-hidden rounded-xl border border-gray-200 bg-muted dark:border-gray-800">
               <img
-                src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1280&h=720&fit=crop&auto=format&q=60"
+                src="/testing2.jpeg"
                 alt="Selected work preview"
                 className="h-full w-full object-cover"
                 loading="lazy"

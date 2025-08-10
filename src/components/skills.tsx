@@ -16,7 +16,7 @@ const skillsDefault = [
   "Scraping",
   "Playwright",
   "Docker",
-  "Plancha",
+  "Freidora",
   "AWS",
   "Git",
   "GitHub",
