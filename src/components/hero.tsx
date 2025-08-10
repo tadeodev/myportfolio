@@ -1,7 +1,11 @@
 import { motion } from "framer-motion"
 import { Download, ArrowDown } from 'lucide-react'
+import { useEffect, useState } from "react"
 
 export default function Hero({
+
+  
+
   name = "Tadeo",
   title = "Full‑Stack Developer | C2 Proficient",
   subtitle = "Diseño, construyo, optimizo y mantengo aplicaciones webs modernas y escalables.",
@@ -12,6 +16,21 @@ export default function Hero({
   subtitle?: string
   resumeUrl?: string
 }) {
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    // Detecta si el html tiene la clase "dark" de Tailwind
+    const checkDarkMode = () =>
+      setIsDark(document.documentElement.classList.contains("dark"))
+
+    checkDarkMode()
+
+    // Si el tema cambia (en apps que lo soporten), actualiza
+    const observer = new MutationObserver(checkDarkMode)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+
+    return () => observer.disconnect()
+  }, [])
   return (
     <section aria-label="Hero" className="container mt-6 flex flex-col items-center gap-10 py-14 md:py-20">
       <motion.div
@@ -20,9 +39,9 @@ export default function Hero({
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex flex-col items-center text-center"
       >
-        <div className="mb-6 overflow-hidden rounded-full border border-gray-200 bg-white/60 p-1 backdrop-blur dark:border-gray-800 dark:bg-gray-900/40">
+        <div className="mb-6 overflow-hidden  rounded-full border border-gray-200 bg-white/60 p-1 backdrop-blur dark:border-gray-800 dark:bg-gray-900/40">
           <img
-            src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?w=240&h=240&fit=crop&auto=format&q=60"
+            src={isDark ? "/polo_oscuro.jpg" : "/polo_blanco.jpg"}
             alt="Developer avatar"
             width={120}
             height={120}

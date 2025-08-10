@@ -29,7 +29,7 @@ const handler: Handler = async (event) => {
       from: process.env.SMTP_USER,          // siempre tu correo autorizado
       to: process.env.SMTP_USER,            // recibes tú el correo
       subject: `Portfolio contact from ${name}`,
-      text: `Mensaje de: ${name},\n Email: <${email}>\n\nMensaje:${message}`,
+      text: `Mensaje de: ${name},\nEmail: <${email}>\n\nMensaje: \n${message}`,
       replyTo: `${name} <${email}>`,        // para poder responder directo
     })
 
