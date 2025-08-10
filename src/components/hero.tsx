@@ -1,38 +1,48 @@
-import { motion } from "framer-motion"
-import { Download, ArrowDown } from 'lucide-react'
-import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
+import { Download, ArrowDown } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Hero({
-
-  
-
   name = "Tadeo",
   title = "Full‑Stack Developer | C2 Proficient",
   subtitle = "Diseño, construyo, optimizo y mantengo aplicaciones webs modernas y escalables.",
   resumeUrl = "#",
 }: {
-  name?: string
-  title?: string
-  subtitle?: string
-  resumeUrl?: string
+  name?: string;
+  title?: string;
+  subtitle?: string;
+  resumeUrl?: string;
 }) {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    // Precargar imágenes
+    const images = ["/polo_oscuro.jpg", "/polo_blanco.jpg"];
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
     // Detecta si el html tiene la clase "dark" de Tailwind
     const checkDarkMode = () =>
-      setIsDark(document.documentElement.classList.contains("dark"))
+      setIsDark(document.documentElement.classList.contains("dark"));
 
-    checkDarkMode()
+    checkDarkMode();
 
     // Si el tema cambia (en apps que lo soporten), actualiza
-    const observer = new MutationObserver(checkDarkMode)
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section aria-label="Hero" className="container mt-6 flex flex-col items-center gap-10 py-14 md:py-20">
+    <section
+      aria-label="Hero"
+      className="container mt-6 flex flex-col items-center gap-10 py-14 md:py-20"
+    >
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
@@ -75,13 +85,24 @@ export default function Hero({
       >
         <div className="grid items-center gap-6 md:grid-cols-2">
           <div className="order-2 md:order-1">
-            <h2 className="text-xl font-semibold">Creando experiencias UX robustas y eficientes</h2>
+            <h2 className="text-xl font-semibold">
+              Creando experiencias UX robustas y eficientes
+            </h2>
             <p className="mt-2 text-muted-foreground">
-              Me especializo en construir aplicaciones eficientes, accesibles y mantenibles utilizando React, TypeScript
-              y pilas modernas de backend.
+              Me especializo en construir aplicaciones eficientes, accesibles y
+              mantenibles utilizando React, TypeScript y pilas modernas de
+              backend.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
-              {["React", "TypeScript", "Node.js", "MySQL", "Docker", "Tailwind", "AWS" ].map((s) => (
+              {[
+                "React",
+                "TypeScript",
+                "Node.js",
+                "MySQL",
+                "Docker",
+                "Tailwind",
+                "AWS",
+              ].map((s) => (
                 <span key={s} className="badge">
                   {s}
                 </span>
@@ -101,10 +122,13 @@ export default function Hero({
         </div>
       </motion.div>
 
-      <a href="#projects" className="group mt-2 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-inherit">
+      <a
+        href="#projects"
+        className="group mt-2 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-inherit"
+      >
         <ArrowDown className="size-4 transition-transform group-hover:translate-y-0.5" />
         Ir a los proyectos
       </a>
     </section>
-  )
+  );
 }
