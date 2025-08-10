@@ -9,11 +9,11 @@ export default function Contact() {
 const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault()
 
-  const res = await fetch("/.netlify/functions/webmail", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, message }),
-  })
+ const res = await fetch("/.netlify/functions/webmail", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, message }),
+})
 
   if (res.ok) {
     alert("Mensaje enviado con éxito")
@@ -77,7 +77,7 @@ const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 Enviar mensaje
               </button>
               <a
-                href="mailto:you@example.com"
+                href="mailto:tadeo.acosta2004@gmail.com"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-inherit"
               >
                 <Mail className="size-4" />
