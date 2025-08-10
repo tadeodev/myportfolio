@@ -15,3 +15,5 @@ yarn-error.log
 *.cache
 *.pid
 *.orig      
+# Local Netlify folder
+.netlify
