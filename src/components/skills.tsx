@@ -34,6 +34,14 @@ const skillsDefault = [
   "Figma",
   "Postman",
   "SEO",
+  "Grafana",
+  "Nginx",
+  "PHP",
+  "Maven",
+  "SQL",
+  "NextJS",
+  "Java",
+  "Python",
 ]
 
 export default function Skills({ skills = skillsDefault }: { skills?: string[] }) {

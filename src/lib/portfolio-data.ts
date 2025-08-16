@@ -15,7 +15,7 @@ export const portfolioProjects: Project[] = [
     name: "Limines",
     description: "Es un servidor propio con múltiples aplicaciones hecho y configurado completamente por mí.",
     image: "/cap_limines.png",
-    tags: ["Linux server", "Docker", "Sys Admin", "Cybersecurity", "Apache2", "Nertworking", "DDNS"],
+    tags: ["Linux server", "Docker", "Sys Admin", "Cybersecurity", "Apache2", "Nertworking", "DDNS", "Grafana"],
     demo: "https://limines.es",
   },
   {
