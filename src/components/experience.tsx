@@ -10,12 +10,12 @@ type ExperienceItem = {
 
 const defaults: ExperienceItem[] = [
   {
-    company: "Buena Energía - Valencia/Valencia",
+    company: "Ganaenergia - Valencia/Valencia",
     role: "Desarrollador FullStack",
     period: "11/2025 — Actualidad",
     description:
       "Actualmente trabajo como desarrollador web junior en esta empresa del sector energético. Mis responsabilidades incluyen el desarrollo y mantenimiento de aplicaciones web internas, así como la colaboración con otros equipos para mejorar la experiencia del usuario.",
-    skills: ["JavaScript", "React", "Node.js", "CSS3", "HTML5", "Git", "Agile"],
+    skills: ["JavaScript", "React", "Node.js", "CSS3", "HTML5", "Git", "NextJS","MongoDB","Express","TypeScript"],
   },
   {
     company: "ActiveXsoft - Puçol/Valencia",
